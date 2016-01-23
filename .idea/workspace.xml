@@ -6,7 +6,13 @@
     </shared>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="321c8cdd-8690-40e8-8d94-6f3f0218d072" name="Default" comment="" />
+    <list default="true" id="321c8cdd-8690-40e8-8d94-6f3f0218d072" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ordre_Du_Jour.txt" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/VocalBrain/app/src/main/java/com/canyourunit/vocalbrain/MainActivity.java" afterPath="$PROJECT_DIR$/VocalBrain/app/src/main/java/com/canyourunit/vocalbrain/MainActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/VocalBrain/gradlew.bat" afterPath="$PROJECT_DIR$/VocalBrain/gradlew.bat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/VocalBrain/gradlew" afterPath="$PROJECT_DIR$/VocalBrain/gradlew" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/VocalBrain/app/proguard-rules.pro" afterPath="$PROJECT_DIR$/VocalBrain/app/proguard-rules.pro" />
+    </list>
     <ignored path="Vocal Brain.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -1759,7 +1765,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="25" width="1922" height="1055" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />

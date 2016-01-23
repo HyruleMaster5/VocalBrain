@@ -11,13 +11,6 @@ android {
         versionCode 1
         versionName "1.0"
     }
-    sourceSets {
-        main {
-            manifest.srcFile 'AndroidManifest.xml'
-            res.srcDirs = ['res']
-            jniLibs.srcDirs = ['libs']
-        }
-    }
     buildTypes {
         release {
             minifyEnabled false
@@ -27,8 +20,7 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.1.1'
-    compile files('libs/NinaCore.jar')
 }
