@@ -1,0 +1,47 @@
+Lifts
+Nom équipe
+Twitter
+Plateforme
+Objectif
+Rôles
+Logiciels
+Projet
+
+1. Lifts
+Papa Christian fait le lift jusqu'à Concordia. Départ 7h30.
+Félix-Antoine aura un lift pour le retour dimanche.
+
+2. Nom d'équipe
+++3 su'l'sofa
+I can't C#
+team.awesome();
+***Can you run it***
+
+3. Twitter
+Christian va créer le Twitter tantôt
+
+4. Plateforme
+Oculus Rift
+Android
+***Windows*** Java
+
+5. Objectifs
+Gagner le iPad air et Amazon 150$
+
+6. Rôles
+F-A: Graphismes UI
+Gab: Java FX
+Kev et Chris: BackEnd
+
+7. Logiciels
+Eclipse
+Java 1.8
+
+8. Projet
+Transit + Clarifai pour trouver des voyages à partir d'une image
+Macadamian et recettes + Nuance's pour voice recognition
+Database avec photos, codebars, reconnaisance vocale
+
+Speech Recognition
+Jeu
+Cloud
