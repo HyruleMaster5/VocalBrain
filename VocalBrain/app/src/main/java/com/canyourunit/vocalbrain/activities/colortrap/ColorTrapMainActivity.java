@@ -35,6 +35,10 @@ public class ColorTrapMainActivity extends AppCompatActivity{
         setContentView(R.layout.colortrap_main);
         VocalBrain.setFermeTaYeule(true);
         mTextView = (TextView) findViewById(R.id.colortrap_text);
+<<<<<<< HEAD
+=======
+        //mProgressBar = (ProgressBar) findViewById(R.id.colortrap_progress);
+>>>>>>> origin/master
         lives = 3;
         score = 0;
         time = 0;
