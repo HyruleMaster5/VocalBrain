@@ -2,9 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
+    ​
     <ImageView
-        android:id="@+id/letterblock"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:layout_width="50dip"
@@ -12,13 +11,14 @@
         android:src="@drawable/letterblock"
         android:layout_marginLeft="3dip"
         android:scaleType="center"/>
-
-    <TextView
+    ​
+    <!--TextView
         android:text="penis"
+        android:id="@+id/letterblock"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#00ffffff" />
-
+        android:background="#00ffffff" /-->
+    ​
 </RelativeLayout>
