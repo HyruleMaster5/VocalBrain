@@ -22,6 +22,14 @@ public class MainActivity extends AppCompatActivity{
     private MyObserver observer;
     private String prompt = "";
     private Timer t;
+    private static MainActivity instance;
+
+    public static MainActivity getInstance(){
+        if(instance == null){
+            instance = new MainActivity();
+        }
+        return instance;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,5 +68,8 @@ public class MainActivity extends AppCompatActivity{
                 }
             }, 50000);
         }
+    }
+    public void startGame(){
+        startActivity(new Intent(MainActivity.this, ))
     }
 }

@@ -9,6 +9,7 @@ import android.util.Log;
  */
 public class VocalBrain extends Application {
     private static Context appContext;
+    private static boolean fermeTaYeule = false;
 
     @Override
     public void onCreate(){
@@ -21,5 +22,13 @@ public class VocalBrain extends Application {
     }
     public static void setAppContext(Context applicationContext) {
         VocalBrain.appContext = applicationContext;
+    }
+
+    public static boolean isFermeTaYeule() {
+        return fermeTaYeule;
+    }
+
+    public static void setFermeTaYeule(boolean fermeTaYeule) {
+        VocalBrain.fermeTaYeule = fermeTaYeule;
     }
 }

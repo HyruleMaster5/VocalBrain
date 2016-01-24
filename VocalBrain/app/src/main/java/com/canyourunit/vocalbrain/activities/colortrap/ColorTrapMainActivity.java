@@ -17,6 +17,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.canyourunit.vocalbrain.R;
+import com.canyourunit.vocalbrain.VocalBrain;
 
 public class ColorTrapMainActivity extends AppCompatActivity{
     private TextView mTextView;
@@ -32,8 +33,8 @@ public class ColorTrapMainActivity extends AppCompatActivity{
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.colortrap_main);
+        VocalBrain.setFermeTaYeule(true);
         mTextView = (TextView) findViewById(R.id.colortrap_text);
-        mProgressBar = (ProgressBar) findViewById(R.id.colortrap_progress);
         lives = 3;
         score = 0;
         time = 0;
@@ -54,6 +55,8 @@ public class ColorTrapMainActivity extends AppCompatActivity{
     }
     private void loseLife(){
         lives--;
+        TextView txt = (TextView) findViewById(R.id.lives);
+        txt.setText(lives);
         combo = 1;
         if(lives == 0){
             endGame();
@@ -61,6 +64,8 @@ public class ColorTrapMainActivity extends AppCompatActivity{
     }
     private void addPoints(){
         score += (10*combo);
+        TextView txt = (TextView) findViewById(R.id.score);
+        txt.setText(score);
     }
     private void endGame(){
         Intent activity = new Intent(this, ColorTrapScoreActivity.class);

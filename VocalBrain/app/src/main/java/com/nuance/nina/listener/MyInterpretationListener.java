@@ -12,7 +12,10 @@ import android.app.Activity;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 
+import com.canyourunit.vocalbrain.MainActivity;
+import com.canyourunit.vocalbrain.VocalBrain;
 import com.nuance.nina.mmf.MMFController;
 import com.nuance.nina.mmf.MMFFindMeaningResult.Concept;
 import com.nuance.nina.mmf.PromptType;
@@ -153,7 +156,6 @@ public class MyInterpretationListener implements InterpretationListener{
 		{
 			Concept[] concepts = data.mmfFindMeaningResult.getBestMeaning().concepts;
 			String prompt = "";
-
 			prompt = "I recognized " + data.mmfFindMeaningResult.getInputText() + " and found that ";
 
 			for (Concept concept : concepts)
@@ -167,7 +169,7 @@ public class MyInterpretationListener implements InterpretationListener{
 		}
 		else if(data.mmfRecognitionResult != null){
 			String prompt = "";
-
+			Log.d(MyInterpretationListener.class.getName(), data.mmfRecognitionResult.getBestTranscription());
 			prompt = "I recognized " + data.mmfRecognitionResult.getBestTranscription();
 			//Views v = ((MainActivity) myActivity).getCurrentFragment();
 			/*switch(v){
@@ -177,8 +179,12 @@ public class MyInterpretationListener implements InterpretationListener{
 			default:
 				break;
 			}*/
+			if(data.mmfRecognitionResult.getBestTranscription().contains("play") || data.mmfRecognitionResult.getBestTranscription().contains("Play")){
+				MainActivity.getInstance().startGame();
+			}
 			prompt = prompt.replaceAll("\\s+", " ").trim();
-			MMFController.getInstance().playPrompt(prompt, PromptType.TEXT);
+			if(!VocalBrain.isFermeTaYeule())
+			    MMFController.getInstance().playPrompt(prompt, PromptType.TEXT);
 			//displayMessage(((MainActivity)myActivity).getCurrentFragment(), "I recognized  " + data.mmfRecognitionResult.getBestTranscription() );
 		}
 		else{
