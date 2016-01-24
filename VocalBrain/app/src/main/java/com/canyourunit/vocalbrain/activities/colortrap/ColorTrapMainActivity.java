@@ -13,25 +13,30 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.canyourunit.vocalbrain.R;
 
 public class ColorTrapMainActivity extends AppCompatActivity{
     private TextView mTextView;
+    private ProgressBar mProgressBar;
     private String[] colorStrings = {"BLACK", "BLUE", "GRAY", "GREEN", "RED", "WHITE", "YELLOW"};
     private int[] colorIndex = {Color.BLACK, Color.BLUE, Color.GRAY, Color.GREEN, Color.RED, Color.WHITE, Color.YELLOW};
     private int lives;
     private int score;
     private int combo;
     private int timeOut = 1000*3;
+    private int time;
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.colortrap_main);
         mTextView = (TextView) findViewById(R.id.colortrap_text);
+        mProgressBar = (ProgressBar) findViewById(R.id.colortrap_progress);
         lives = 3;
         score = 0;
+        time = 0;
         setNewWord();
     }
     public void setNewWord(){
@@ -42,6 +47,7 @@ public class ColorTrapMainActivity extends AppCompatActivity{
         if(input.equals(mTextView.getText())){
             addPoints();
             setNewWord();
+            time = 0;
         }else{
             loseLife();
         }
