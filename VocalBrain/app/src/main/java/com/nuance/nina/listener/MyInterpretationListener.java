@@ -9,6 +9,7 @@
 package com.nuance.nina.listener;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.v7.app.AppCompatActivity;
@@ -16,6 +17,9 @@ import android.util.Log;
 
 import com.canyourunit.vocalbrain.MainActivity;
 import com.canyourunit.vocalbrain.VocalBrain;
+import com.canyourunit.vocalbrain.activities.ColorTrapActivity;
+import com.canyourunit.vocalbrain.activities.LevelSelectActivity;
+import com.canyourunit.vocalbrain.activities.colortrap.ColorTrapMainActivity;
 import com.nuance.nina.mmf.MMFController;
 import com.nuance.nina.mmf.MMFFindMeaningResult.Concept;
 import com.nuance.nina.mmf.PromptType;
@@ -179,12 +183,20 @@ public class MyInterpretationListener implements InterpretationListener{
 			default:
 				break;
 			}*/
-			if(data.mmfRecognitionResult.getBestTranscription().contains("play") || data.mmfRecognitionResult.getBestTranscription().contains("Play")){
-				MainActivity.getInstance().startGame();
+			if(myActivity instanceof MainActivity && (data.mmfRecognitionResult.getBestTranscription().contains("play") || data.mmfRecognitionResult.getBestTranscription().contains("Play") ||data.mmfRecognitionResult.getBestTranscription().contains("game") || data.mmfRecognitionResult.getBestTranscription().contains("Game") || data.mmfRecognitionResult.getBestTranscription().contains("Level") || data.mmfRecognitionResult.getBestTranscription().contains("level") || data.mmfRecognitionResult.getBestTranscription().contains("selection") || data.mmfRecognitionResult.getBestTranscription().contains("Selection"))){
+				Intent acti = new Intent(myActivity, LevelSelectActivity.class);
+				acti.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+				myActivity.startActivity(acti);
+			}else if(myActivity instanceof LevelSelectActivity && (data.mmfRecognitionResult.getBestTranscription().contains("play") || data.mmfRecognitionResult.getBestTranscription().contains("Play") ||data.mmfRecognitionResult.getBestTranscription().contains("game") || data.mmfRecognitionResult.getBestTranscription().contains("Game") || data.mmfRecognitionResult.getBestTranscription().contains("Color") || data.mmfRecognitionResult.getBestTranscription().contains("color") || data.mmfRecognitionResult.getBestTranscription().contains("trap") || data.mmfRecognitionResult.getBestTranscription().contains("Trap"))){
+				Intent acti = new Intent(myActivity, ColorTrapMainActivity.class);
+				acti.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+				myActivity.startActivity(acti);
+			}else if(myActivity instanceof ColorTrapMainActivity){
+				((ColorTrapMainActivity) myActivity).receiveInput(data.mmfRecognitionResult.getBestTranscription());
 			}
 			prompt = prompt.replaceAll("\\s+", " ").trim();
-			if(!VocalBrain.isFermeTaYeule())
-			    MMFController.getInstance().playPrompt(prompt, PromptType.TEXT);
+			//if(!VocalBrain.isFermeTaYeule())
+			   // MMFController.getInstance().playPrompt(prompt, PromptType.TEXT);
 			//displayMessage(((MainActivity)myActivity).getCurrentFragment(), "I recognized  " + data.mmfRecognitionResult.getBestTranscription() );
 		}
 		else{

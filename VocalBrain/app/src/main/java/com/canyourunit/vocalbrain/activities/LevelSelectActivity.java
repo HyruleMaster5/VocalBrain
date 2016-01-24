@@ -3,38 +3,49 @@ package com.canyourunit.vocalbrain.activities;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.ImageView;
 
 import com.canyourunit.vocalbrain.R;
+import com.nuance.nina.listener.MyInterpretationListener;
+import com.nuance.nina.mmf.MMFController;
+import com.nuance.nina.observer.MyObserver;
+
+import java.util.Timer;
+import java.util.TimerTask;
 
 /**
  * Created by Gabriel on 2016-01-24.
  */
 public class LevelSelectActivity extends AppCompatActivity {
-
-    private ImageView colortraplevel;
-    private ImageView wordscramblelevel;
-    private AnimationDrawable microphone_animation;
+    private MyInterpretationListener listener;
+    private MyObserver observer;
+    private Timer t;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.levelselect);
-
-        ImageView rocketImage = (ImageView) findViewById(R.id.microphone);
-        rocketImage.setBackgroundResource(R.drawable.micro_recognized_00000);
-        microphone_animation = (AnimationDrawable) rocketImage.getBackground();
+        listener = new MyInterpretationListener(this);
+        observer = new MyObserver(this);
+        observer.registerListeners();
     }
-
-    public void commandRecognized() {
-        microphone_animation.start();
+    @Override
+    protected void onStart(){
+        super.onStart();
+        Log.d(LevelSelectActivity.class.getName(), "lbob");
+        MMFController.getInstance().startListeningForRecognition();
     }
-
-    public void selectColorTrap(){
-
+    @Override
+    protected void onResume(){
+        super.onResume();
+        if(t != null) {
+            t.schedule(new TimerTask() {
+                @Override
+                public void run() {
+                    Log.d(LevelSelectActivity.class.getName(), "REsume2");
+                    MMFController.getInstance().stopRecordingAudio();
+                }
+            }, 50000);
+        }
     }
-
-    public void selectWordScramble(){
-
-    }
-
 }

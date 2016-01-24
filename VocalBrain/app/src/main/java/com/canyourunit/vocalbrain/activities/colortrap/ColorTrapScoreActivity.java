@@ -9,7 +9,21 @@
  */
 package com.canyourunit.vocalbrain.activities.colortrap;
 
+import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.TextView;
+
+import com.canyourunit.vocalbrain.R;
 
 public class ColorTrapScoreActivity extends AppCompatActivity{
+    private int score;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState){
+        super.onCreate(savedInstanceState);
+        score = getIntent().getIntExtra("score", 0);
+        setContentView(R.layout.endgame);
+        TextView txt = (TextView) findViewById(R.id.score);
+        txt.setText("" + score);
+    }
 }

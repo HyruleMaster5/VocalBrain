@@ -46,4 +46,16 @@
         android:layout_marginRight="30dp"
         android:layout_marginBottom="-20dp" />
 
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/microphone"
+        android:src="@drawable/micro_recognized_00000"
+        android:layout_marginRight="121dp"
+        android:layout_marginEnd="121dp"
+        android:layout_alignTop="@+id/logo"
+        android:layout_alignRight="@+id/playbutton"
+        android:layout_alignEnd="@+id/playbutton"
+        android:layout_marginTop="37dp" />
+
 </RelativeLayout>

@@ -1,8 +1,12 @@
 package com.canyourunit.vocalbrain;
 
+import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
+
+import com.canyourunit.vocalbrain.activities.LevelSelectActivity;
 
 /**
  * Created by mintyguy on 23/01/16.

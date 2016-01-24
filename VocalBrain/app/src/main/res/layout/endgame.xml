@@ -2,18 +2,67 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/endgame">
+    android:background="#3a9ecb">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
         android:id="@+id/score"
-        android:layout_marginTop="144dp"
         android:textColor="#ffffff"
         android:text="12345"
-        android:layout_alignParentTop="true"
+        android:layout_marginRight="148dp"
+        android:layout_marginEnd="148dp"
+        android:textSize="40dp"
+        android:layout_centerVertical="true"
+        android:layout_alignRight="@+id/imageView5"
+        android:layout_alignEnd="@+id/imageView5"
+        android:textStyle="bold" />
+
+    <ImageView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/real_endgame_15"
+    android:layout_centerHorizontal="true"
+        android:id="@+id/imageView4" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/real_endgame_16"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/imageView3" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/real_endgame_17"
+        android:layout_below="@+id/imageView3"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/imageView5" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/real_endgame_14"
+        android:id="@+id/imageView7"
+        android:cropToPadding="false"
+        android:layout_below="@+id/imageView5"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginRight="245dp" />
+        android:layout_toRightOf="@+id/imageView5"
+        android:layout_toEndOf="@+id/imageView5" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/real_endgame_13"
+        android:id="@+id/imageView6"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/imageView5"
+        android:layout_toStartOf="@+id/imageView5"
+        android:layout_toLeftOf="@+id/imageView5" />
+
 </RelativeLayout>
