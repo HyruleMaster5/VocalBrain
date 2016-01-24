@@ -33,7 +33,7 @@ public class ColorTrapMainActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.colortrap_main);
         mTextView = (TextView) findViewById(R.id.colortrap_text);
-        mProgressBar = (ProgressBar) findViewById(R.id.colortrap_progress);
+        //mProgressBar = (ProgressBar) findViewById(R.id.colortrap_progress);
         lives = 3;
         score = 0;
         time = 0;
