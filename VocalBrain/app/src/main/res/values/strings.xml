@@ -1,9 +1,4 @@
 <resources>
     <string name="app_name">Vocal Brain</string>
 
-    <!--> Splash Screen Strings -->
-    <string name="splashinfo">TRAIN your brain!\n Use your VOICE\nto PLAY all the games!</string>
-    <string name="play">\"PLAY\"</string>
-    <string name="options">\"OPTIONS\"</string>
-
 </resources>

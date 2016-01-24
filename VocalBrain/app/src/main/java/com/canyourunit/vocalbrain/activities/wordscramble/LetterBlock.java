@@ -14,7 +14,7 @@ public class LetterBlock extends View{
     private TextView letter;
     private final ImageView block = (ImageView)findViewById(R.id.letterblock);    //Default image
 
-    public LetterBlock(){   
+    public LetterBlock(){
 
         //Default constructor
         letter.setText("A");
