@@ -1,6 +1,5 @@
 package com.canyourunit.vocalbrain.activities.wordscramble;
 
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -9,10 +8,10 @@ import com.canyourunit.vocalbrain.R;
 /**
  * Created by Gabriel on 2016-01-23.
  */
-public class LetterBlock extends View{
+public class LetterBlock{
 
     private TextView letter;
-    private final ImageView block = (ImageView)findViewById(R.id.letterblock);    //Default image
+   // private final ImageView block = (ImageView)(R.id.letterblock);    //Default image
 
     public LetterBlock(){
 
@@ -21,7 +20,6 @@ public class LetterBlock extends View{
     }
 
     public LetterBlock(char inputletter){                    //Custom constructor
-        super(inputletter);
         letter.setText(inputletter);
     }
 

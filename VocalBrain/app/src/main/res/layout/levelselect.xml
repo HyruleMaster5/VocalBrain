@@ -2,6 +2,41 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/splash_screen_med">
+    android:background="@drawable/level_select">
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/logo"
+        android:src="@drawable/splashscreenart"
+        android:layout_alignParentEnd="false"
+        android:layout_marginRight="350dp"
+        android:layout_marginBottom="130dp"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentLeft="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/game1"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/game1"
+        android:layout_marginLeft="250dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="150dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/game2"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/game1"
+        android:layout_alignEnd="@+id/game1"
+        android:src="@drawable/game2"
+        android:layout_marginLeft="250dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="-90dp"
+        android:layout_alignParentEnd="true" />
 </RelativeLayout>
