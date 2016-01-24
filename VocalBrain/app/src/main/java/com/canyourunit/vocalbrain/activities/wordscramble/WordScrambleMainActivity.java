@@ -1,7 +1,7 @@
 package com.canyourunit.vocalbrain.activities.wordscramble;
 
 import android.os.Bundle;
-import android.widget.RelativeLayout;
+import android.widget.LinearLayout;
 
 import com.canyourunit.vocalbrain.R;
 
@@ -17,7 +17,7 @@ public class WordScrambleMainActivity extends AppCompatActivity{
     private String[] dictionary = {"Apple", "Banana", "Ceiling", "Lunch", "Outstanding", "Sufficient", "Accounts", "Bounced", "Books"};
     private String[] debugdictionary = {"Apple", "Banana"};
     private String word;
-    private  layout;
+    private LinearLayout layout;
     private int lives;
     private int score;
     private int combo;
@@ -30,7 +30,7 @@ public class WordScrambleMainActivity extends AppCompatActivity{
         lives = 3;
         score = 0;
         setWord();
-        layout = (RelativeLayout) findViewById(R.id.blocklayout);
+        layout = (LinearLayout) findViewById(R.id.blocklayout);
     }
 
     public String ScrambleWord(String inputString){
@@ -65,7 +65,7 @@ public class WordScrambleMainActivity extends AppCompatActivity{
 
         for(int i = 0; i < word.length(); i++){
             LetterBlock block = new LetterBlock(word.charAt(i));
-            layout.
+            layout.addView();
         }
     }
 
