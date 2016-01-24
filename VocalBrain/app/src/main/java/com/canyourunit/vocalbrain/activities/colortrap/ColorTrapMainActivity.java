@@ -28,7 +28,7 @@ public class ColorTrapMainActivity extends AppCompatActivity{
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.colortrap_activity);
+        setContentView(R.layout.colortrap_main);
         mTextView = (TextView) findViewById(R.id.colortrap_text);
         lives = 3;
         score = 0;
